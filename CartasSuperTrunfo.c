@@ -18,7 +18,6 @@ int main() {
     printf("Digite o nome da Cidade: \n");
     fgets(nome, sizeof(nome), stdin); // Usa fgets para ler a string com espaços
 
-    
     printf("Digite o codigo da carta: \n");
     scanf("%d", &codigo);
 
@@ -33,12 +32,18 @@ int main() {
 
     printf("Digite a quantidade de pontos turisticos da cidade: \n");
     scanf("%d", &pontos_turisticos);
+
+    //calculos
+    
+    float densi_pop = populacao / area;
+    float PIB_percapita = pib / (float) populacao;
+    
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     
-    printf("Cidade: %s \nCodigo: %d \nPopulacao total: %d \nArea total: %fkm² \nPIB: R$ %f \nQuantidade de pontos turisticos: %d \n", 
-           nome, codigo, populacao, area, pib, pontos_turisticos);
+    printf("Cidade: %s \nCodigo: %d \nPopulacao total: %d \nArea total: %.2fkm² \nPIB: R$ %.2f \nQuantidade de pontos turisticos: %d \nDensidade Populacional: %.2f habitantes/km² \nPIB per Capita: %.2f reais por pessoa \n"
+            , nome, codigo, populacao, area, pib, pontos_turisticos, densi_pop, PIB_percapita);
     
     
     return 0;
